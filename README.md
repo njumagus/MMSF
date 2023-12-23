@@ -1,9 +1,10 @@
 # MMSF: A Multimodal Sentiment-Fused Method to Recognize Video Speaking Style
 
-## Installation
+All the data, processed data, extracted features, pretrained model weights, results and supporting sources can be downloaded at [Baidu Disk](https://pan.baidu.com/s/1capDCX6_55jdSW8Yx3eGBg?pwd=4ac6).
+
+## Environment
 - python3.8
 - CUDA11.8
-- 
 ```
 export PYTHONPATH=$PWD
 ```
@@ -59,7 +60,6 @@ python data_process/video_process.py
 python data_process/audio_process.py
 python data_process/subtitle_process.py
 ```
-You can also download the raw data and the processed data at [Google Drive](). 
 
 ## Feature Extract
 Install MMSA-FET following https://github.com/thuiar/MMSA-FET/wiki/Dependency-Installation:

@@ -855,3 +855,18 @@ shutil.Error: Destination path 'feat_extract/MMSA-FET/tmp/00023.jpg' already exi
 2023-12-23 14:13:23,939 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0304.mp4'.
 2023-12-23 14:13:23,968 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0822.mp4'.
 2023-12-23 14:13:24,054 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0371.mp4'.
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - 
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - Config: {'audio': {'tool': 'librosa', 'sample_rate': 22050, 'args': {'mfcc': {'n_mfcc': 20, 'htk': True}, 'zero_crossing_rate': {}, 'chroma_cqt': {}}}}
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - Initializing librosa audio feature extractor.
+2023-12-24 00:13:14,694 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-24 00:13:17,615 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0216.mp4'.
+2023-12-24 00:13:19,926 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0853.mp4'.
+2023-12-24 00:13:29,944 - MMSA-FET [INFO] - 
+2023-12-24 00:13:29,944 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-24 00:13:29,944 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-24 00:13:29,944 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-24 00:13:29,944 - MMSA-FET [INFO] - Config: {'text': {'model': 'bert', 'device': 'cpu', 'pretrained': 'bert-base-uncased', 'args': {}}}
+2023-12-24 00:13:29,945 - MMSA-FET [INFO] - Initializing BERT text feature extractor.
