@@ -1,0 +1,5 @@
+这是视频多模态数据导出的仓库
+1.环境：magus12上的一个docker环境MMSA-FET-py38-cuda11
+2.改动不大，主要是在MSA_FET/main的run_single方法中加了一些打印信息，对extractor/text/bert的extract和tokenize方法中对text的长度进行了限制和截取
+3.它的使用方法在../data_process/MMSA_feat.py的generate_MMSA_feat中
+4.关于各模态特征的导出，它有多种工具可以选择，具体可参考example_configs下的参数文件
