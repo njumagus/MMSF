@@ -1,0 +1,4 @@
+MMSA/=====================
+1.是SELFMM的代码，它是一个拥有很多baseline的仓库，SELFMM是其中一个可选项，它的环境是magus12上的一个docker环境MMSA-py38-cuda11
+2.主要的改动是加了一个data_loader_lvu用于加载lvu数据
+3.它的启动程序在data_process/MMSA_senti_feat.py中,在这个脚本的main中指定在x数据集上训练/测试x模型，然后直接执行脚本即可

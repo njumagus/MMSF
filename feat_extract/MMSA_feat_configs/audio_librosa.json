@@ -1,0 +1,14 @@
+{
+    "audio": {
+    "tool": "librosa",
+    "sample_rate": 22050,
+    "args": {
+      "mfcc": {
+        "n_mfcc": 20,
+        "htk": true
+      },
+      "zero_crossing_rate": {},
+      "chroma_cqt": {}
+    }
+  }
+}

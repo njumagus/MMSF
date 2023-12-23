@@ -1,0 +1,44 @@
+{
+    "audio": {
+      "tool": "opensmile",
+      "sample_rate": 16000,
+      "args": {
+        "feature_set": "eGeMAPSv02",
+        "feature_level": "Functionals",
+        "start": null,
+        "end": null
+      }
+  },
+  "text": {
+      "model": "bert",
+      "device": "cpu",
+      "pretrained": "bert-base-uncased",
+      "args": {}
+  },
+  "video": {
+      "tool": "openface",
+      "fps": 30,
+      "average_over": 1,
+      "multiFace": {
+        "enable": true,
+        "device": "cpu",
+        "facedetScale": 0.25,
+        "minTrack": 10,
+        "numFailedDet": 10,
+        "minFaceSize": 1,
+        "cropScale": 0.4
+      },
+      "args": {
+        "hogalign": false,
+        "simalign": false,
+        "nobadaligned": false,
+        "landmark_2D": true,
+        "landmark_3D": false,
+        "pdmparams": false,
+        "head_pose": false,
+        "action_units": true,
+        "gaze": false,
+        "tracked": false
+      }
+  }
+}

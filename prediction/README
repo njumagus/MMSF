@@ -1,0 +1,33 @@
+这是ICMR23-融合情绪的多模态视频对话风格分类方法的主仓库
+
+环境：magus12服务器(一张rtx3090) conda环境dvuc21=python3.6+torch1.8+cuda11.1
+进入prediction文件夹，首先export PYTHONPATH=$PWD
+
+代码说明：
+dataset/=================
+用来加载数据，其中dataset_MMSA加载所有特征，包括不带情绪的原始特征，和经过SelfMM处理过的带情绪的特征，dataset_senti只加载带情绪的特征
+
+model/===================
+model_MMSA为主模型结构
+
+run/=====================
+run_mmsa_transformer为主程序，训练和测试都能在main里开启->python run/run_mmsa_transformer.py开启训练，如果要测试，就在main里注掉train()，放出test()
+run_senti_model是为了探索一个好的情绪特征的后处理方法而单独拿出来的实验，可以不多关注
+
+config===================
+主要在类MMSATrainConfig里定义用哪些模态，以及这些模态与对应的情绪模态的融合方式，还有最终的多模态融合方式
+消融实验中控制的参数变量有：
+modal_list代表基础特征的模态列表
+senti_model_list代表情绪特征的模态列别，如果为空，即不带情绪特征
+senti_feat_fusion_strategies是一个list，代表用dot product还是用cross attention fusion的方法来融合基础特征和情绪特征
+early_fusion是一个bool，为True代表是用早期融合的方式来融合多模态特征，否则用晚期融合
+
+
+evaluate=================
+用来评估测试集跑出来的结果，一般也不用特别去跑这个，因为在run里面会把评价指标的值也计算并打出来
+
+
+
+
+
+

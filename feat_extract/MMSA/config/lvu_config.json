@@ -1,0 +1,13 @@
+{
+    "lvu":{
+        "video":"openface",
+        "audio":"librosa",
+        "text":"bert"
+    },
+    "mosi_lvu":{
+        "video":"openface",
+        "audio":"librosa",
+        "text":"bert"
+    }
+
+}

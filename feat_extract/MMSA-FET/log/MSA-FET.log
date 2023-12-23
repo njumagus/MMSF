@@ -1,0 +1,857 @@
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - 
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 20:17:22,447 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 20:19:46,245 - MMSA-FET [ERROR] - Failed to extract video features with OpenFace from video_0485.
+2023-12-21 20:19:46,245 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 160, in __video_extract_single
+    video_result = self.video_extractor.extract(self.tmp_dir, name, tool_output=self.verbose>0)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 102, in extract
+    raise e
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 90, in extract
+    df = pd.read_csv(Path(img_dir) / (str(name) + '.csv'))
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'feat_extract/MMSA-FET/tmp/tmp.csv'
+2023-12-21 20:19:46,246 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 20:37:24,156 - MMSA-FET [INFO] - 
+2023-12-21 20:37:24,156 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 20:37:24,156 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 20:37:24,156 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 20:37:24,156 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 20:37:24,156 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 20:37:24,157 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 20:39:49,120 - MMSA-FET [ERROR] - Failed to extract video features with OpenFace from video_0485.
+2023-12-21 20:39:49,120 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 160, in __video_extract_single
+    video_result = self.video_extractor.extract(self.tmp_dir, name, tool_output=self.verbose>0)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 102, in extract
+    raise e
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 90, in extract
+    df = pd.read_csv(Path(img_dir) / (str(name) + '.csv'))
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'feat_extract/MMSA-FET/tmp/tmp.csv'
+2023-12-21 20:39:49,122 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - 
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:01:16,643 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:04:44,926 - MMSA-FET [INFO] - 
+2023-12-21 21:04:44,926 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:04:44,926 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:04:44,926 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:04:44,926 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:04:44,927 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:04:44,927 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - 
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:19:02,853 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:21:24,478 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 154, in __video_extract_single
+    run_ASD(in_file, self.tmp_dir, fps, self.config['video']['multiFace'])
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/ASD/ASD.py", line 292, in run_ASD
+    move(file, output_dir)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/shutil.py", line 789, in move
+    raise Error("Destination path '%s' already exists" % real_dst)
+shutil.Error: Destination path 'feat_extract/MMSA-FET/tmp/00023.jpg' already exists
+2023-12-21 21:21:24,480 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 21:21:52,548 - MMSA-FET [INFO] - 
+2023-12-21 21:21:52,549 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:21:52,549 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:21:52,549 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:21:52,549 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:21:52,549 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:21:52,549 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:24:16,385 - MMSA-FET [ERROR] - Failed to extract video features with OpenFace from video_0485.
+2023-12-21 21:24:16,385 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 160, in __video_extract_single
+    video_result = self.video_extractor.extract(self.tmp_dir, name, tool_output=self.verbose>0)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 102, in extract
+    raise e
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 90, in extract
+    df = pd.read_csv(Path(img_dir) / (str(name) + '.csv'))
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'feat_extract/MMSA-FET/tmp/tmp.csv'
+2023-12-21 21:24:16,386 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 21:25:05,454 - MMSA-FET [INFO] - 
+2023-12-21 21:25:05,455 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:25:05,455 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:25:05,455 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:25:05,455 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:25:05,455 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:25:05,455 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:27:27,851 - MMSA-FET [ERROR] - Failed to extract video features with OpenFace from video_0485.
+2023-12-21 21:27:27,852 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 160, in __video_extract_single
+    video_result = self.video_extractor.extract(self.tmp_dir, name, tool_output=self.verbose>0)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 102, in extract
+    raise e
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 90, in extract
+    df = pd.read_csv(Path(img_dir) / (str(name) + '.csv'))
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'feat_extract/MMSA-FET/tmp/tmp.csv'
+2023-12-21 21:27:27,853 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 21:30:53,755 - MMSA-FET [INFO] - 
+2023-12-21 21:30:53,755 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:30:53,755 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:30:53,755 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:30:53,755 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:30:53,755 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:30:53,756 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:31:21,528 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 154, in __video_extract_single
+    run_ASD(in_file, self.tmp_dir, fps, self.config['video']['multiFace'])
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/ASD/ASD.py", line 268, in run_ASD
+    faces = inference_video(args)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/ASD/ASD.py", line 49, in inference_video
+    imageNumpy = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+cv2.error: OpenCV(4.8.1) /io/opencv/modules/imgproc/src/color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cvtColor'
+
+2023-12-21 21:31:21,530 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - 
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 21:31:42,878 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 21:34:03,236 - MMSA-FET [ERROR] - Failed to extract video features with OpenFace from video_0485.
+2023-12-21 21:34:03,236 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 160, in __video_extract_single
+    video_result = self.video_extractor.extract(self.tmp_dir, name, tool_output=self.verbose>0)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 102, in extract
+    raise e
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 90, in extract
+    df = pd.read_csv(Path(img_dir) / (str(name) + '.csv'))
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'feat_extract/MMSA-FET/tmp/tmp.csv'
+2023-12-21 21:34:03,237 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 23:31:32,775 - MMSA-FET [INFO] - 
+2023-12-21 23:31:32,775 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 23:31:32,775 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 23:31:32,775 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 23:31:32,775 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 23:31:32,775 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 23:31:32,776 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 23:33:54,780 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 154, in __video_extract_single
+    run_ASD(in_file, self.tmp_dir, fps, self.config['video']['multiFace'])
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/ASD/ASD.py", line 292, in run_ASD
+    move(file, output_dir)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/shutil.py", line 789, in move
+    raise Error("Destination path '%s' already exists" % real_dst)
+shutil.Error: Destination path 'feat_extract/MMSA-FET/tmp/00023.jpg' already exists
+2023-12-21 23:33:54,781 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-21 23:34:06,232 - MMSA-FET [INFO] - 
+2023-12-21 23:34:06,233 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-21 23:34:06,233 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-21 23:34:06,233 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-21 23:34:06,233 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-21 23:34:06,233 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-21 23:34:06,233 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-21 23:36:29,639 - MMSA-FET [ERROR] - Failed to extract video features with OpenFace from video_0485.
+2023-12-21 23:36:29,640 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 160, in __video_extract_single
+    video_result = self.video_extractor.extract(self.tmp_dir, name, tool_output=self.verbose>0)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 102, in extract
+    raise e
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/extractors/video/openface.py", line 90, in extract
+    df = pd.read_csv(Path(img_dir) / (str(name) + '.csv'))
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'feat_extract/MMSA-FET/tmp/tmp.csv'
+2023-12-21 23:36:29,641 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-22 00:29:59,551 - MMSA-FET [INFO] - 
+2023-12-22 00:29:59,551 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-22 00:29:59,551 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-22 00:29:59,551 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-22 00:29:59,551 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-22 00:29:59,551 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-22 00:29:59,552 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-22 00:32:27,604 - MMSA-FET [ERROR] - An Error Occured:
+Traceback (most recent call last):
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 314, in run_single
+    video_result = self.__video_extract_single(in_file)
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/main.py", line 154, in __video_extract_single
+    run_ASD(in_file, self.tmp_dir, fps, self.config['video']['multiFace'])
+  File "/media/magus/Data1/ICMR23_rep/code/feat_extract/MSA_FET/ASD/ASD.py", line 292, in run_ASD
+    move(file, output_dir)
+  File "/opt/conda/envs/icmr24repro/lib/python3.8/shutil.py", line 789, in move
+    raise Error("Destination path '%s' already exists" % real_dst)
+shutil.Error: Destination path 'feat_extract/MMSA-FET/tmp/00023.jpg' already exists
+2023-12-22 00:32:27,605 - MMSA-FET [DEBUG] - Removing temporary files.
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - 
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-22 00:32:59,593 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-22 00:35:31,179 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0216.mp4'.
+2023-12-22 00:36:42,362 - MMSA-FET [INFO] - 
+2023-12-22 00:36:42,362 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-22 00:36:42,362 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-22 00:36:42,362 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-22 00:36:42,362 - MMSA-FET [INFO] - Config: {'text': {'model': 'bert', 'device': 'cpu', 'pretrained': 'bert-base-uncased', 'args': {}}}
+2023-12-22 00:36:42,362 - MMSA-FET [INFO] - Initializing BERT text feature extractor.
+2023-12-22 00:37:29,130 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-22 00:37:29,712 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0216.mp4'.
+2023-12-22 00:37:29,778 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0853.mp4'.
+2023-12-22 00:37:29,818 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0404.mp4'.
+2023-12-22 00:37:29,894 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0089.mp4'.
+2023-12-22 00:37:29,965 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0384.mp4'.
+2023-12-22 00:37:30,027 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0030.mp4'.
+2023-12-22 00:37:30,094 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0610.mp4'.
+2023-12-22 00:37:30,198 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0455.mp4'.
+2023-12-22 00:37:30,341 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0244.mp4'.
+2023-12-22 00:37:30,462 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0560.mp4'.
+2023-12-22 00:37:30,594 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0176.mp4'.
+2023-12-22 00:37:30,658 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0347.mp4'.
+2023-12-22 00:37:30,784 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0275.mp4'.
+2023-12-22 00:37:30,824 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0614.mp4'.
+2023-12-22 00:37:30,927 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0451.mp4'.
+2023-12-22 00:37:31,068 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0603.mp4'.
+2023-12-22 00:37:31,164 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0116.mp4'.
+2023-12-22 00:37:31,214 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0193.mp4'.
+2023-12-22 00:37:31,337 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0168.mp4'.
+2023-12-22 00:37:31,376 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0628.mp4'.
+2023-12-22 00:37:31,507 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0185.mp4'.
+2023-12-22 00:37:31,673 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0854.mp4'.
+2023-12-22 00:37:31,746 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0844.mp4'.
+2023-12-22 00:37:31,908 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0204.mp4'.
+2023-12-22 00:37:32,005 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0395.mp4'.
+2023-12-22 00:37:32,046 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0044.mp4'.
+2023-12-22 00:37:32,175 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0052.mp4'.
+2023-12-22 00:37:32,231 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0860.mp4'.
+2023-12-22 00:37:32,354 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0594.mp4'.
+2023-12-22 00:37:32,570 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0291.mp4'.
+2023-12-22 00:37:32,694 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0753.mp4'.
+2023-12-22 00:37:32,823 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0800.mp4'.
+2023-12-22 00:37:32,925 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0245.mp4'.
+2023-12-22 00:37:33,016 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0156.mp4'.
+2023-12-22 00:37:33,091 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0130.mp4'.
+2023-12-22 00:37:33,234 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0304.mp4'.
+2023-12-22 00:37:33,265 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0822.mp4'.
+2023-12-22 00:37:33,359 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0371.mp4'.
+2023-12-22 00:37:33,537 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0454.mp4'.
+2023-12-22 00:37:33,662 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0302.mp4'.
+2023-12-22 00:37:33,797 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0556.mp4'.
+2023-12-22 00:37:33,917 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0144.mp4'.
+2023-12-22 00:37:34,066 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0619.mp4'.
+2023-12-22 00:37:34,232 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0207.mp4'.
+2023-12-22 00:37:34,386 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0573.mp4'.
+2023-12-22 00:37:34,493 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0017.mp4'.
+2023-12-22 00:37:34,559 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0220.mp4'.
+2023-12-22 00:37:34,625 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0526.mp4'.
+2023-12-22 00:37:34,712 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0287.mp4'.
+2023-12-22 00:37:34,830 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0450.mp4'.
+2023-12-22 00:37:35,073 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0314.mp4'.
+2023-12-22 00:37:35,202 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0242.mp4'.
+2023-12-22 00:37:35,270 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0208.mp4'.
+2023-12-22 00:37:35,377 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0926.mp4'.
+2023-12-22 00:37:35,447 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0909.mp4'.
+2023-12-22 00:37:35,540 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0134.mp4'.
+2023-12-22 00:37:35,765 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0494.mp4'.
+2023-12-22 00:37:35,821 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0376.mp4'.
+2023-12-22 00:37:35,889 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0221.mp4'.
+2023-12-22 00:37:36,002 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0805.mp4'.
+2023-12-22 00:37:36,081 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0901.mp4'.
+2023-12-22 00:37:36,250 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0248.mp4'.
+2023-12-22 00:37:36,378 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0905.mp4'.
+2023-12-22 00:37:36,510 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0502.mp4'.
+2023-12-22 00:37:36,564 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0745.mp4'.
+2023-12-22 00:37:36,612 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0798.mp4'.
+2023-12-22 00:37:36,732 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0136.mp4'.
+2023-12-22 00:37:36,804 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0638.mp4'.
+2023-12-22 00:37:36,929 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0007.mp4'.
+2023-12-22 00:37:37,021 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0482.mp4'.
+2023-12-22 00:37:37,140 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0811.mp4'.
+2023-12-22 00:37:37,187 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0932.mp4'.
+2023-12-22 00:37:37,329 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0100.mp4'.
+2023-12-22 00:37:37,448 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0370.mp4'.
+2023-12-22 00:37:37,541 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0269.mp4'.
+2023-12-22 00:37:37,585 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0312.mp4'.
+2023-12-22 00:37:37,678 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0643.mp4'.
+2023-12-22 00:37:37,895 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0483.mp4'.
+2023-12-22 00:37:37,990 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0673.mp4'.
+2023-12-22 00:37:38,077 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0635.mp4'.
+2023-12-22 00:37:38,150 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0096.mp4'.
+2023-12-22 00:37:38,265 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0794.mp4'.
+2023-12-22 00:37:38,317 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0736.mp4'.
+2023-12-22 00:37:38,417 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0265.mp4'.
+2023-12-22 00:37:38,492 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0882.mp4'.
+2023-12-22 00:37:38,541 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0297.mp4'.
+2023-12-22 00:37:38,569 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0128.mp4'.
+2023-12-22 00:37:38,635 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0386.mp4'.
+2023-12-22 00:37:38,761 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0032.mp4'.
+2023-12-22 00:37:38,817 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0261.mp4'.
+2023-12-22 00:37:38,860 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0874.mp4'.
+2023-12-22 00:37:38,950 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0491.mp4'.
+2023-12-22 00:37:39,039 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0693.mp4'.
+2023-12-22 00:37:39,177 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0529.mp4'.
+2023-12-22 00:37:39,232 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0653.mp4'.
+2023-12-22 00:37:39,360 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0921.mp4'.
+2023-12-22 00:37:39,461 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0238.mp4'.
+2023-12-22 00:37:39,566 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0530.mp4'.
+2023-12-22 00:37:39,648 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0170.mp4'.
+2023-12-22 00:37:39,736 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0916.mp4'.
+2023-12-22 00:37:39,795 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0554.mp4'.
+2023-12-22 00:37:39,922 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0936.mp4'.
+2023-12-22 00:37:39,964 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0240.mp4'.
+2023-12-22 00:37:40,069 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0359.mp4'.
+2023-12-22 00:37:40,135 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0763.mp4'.
+2023-12-22 00:37:40,298 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0280.mp4'.
+2023-12-22 00:37:40,444 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0891.mp4'.
+2023-12-22 00:37:40,511 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0015.mp4'.
+2023-12-22 00:37:40,600 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0850.mp4'.
+2023-12-22 00:37:40,812 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0388.mp4'.
+2023-12-22 00:37:40,878 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0721.mp4'.
+2023-12-22 00:37:41,010 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0416.mp4'.
+2023-12-22 00:37:41,070 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0273.mp4'.
+2023-12-22 00:37:41,153 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0559.mp4'.
+2023-12-22 00:37:41,263 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0178.mp4'.
+2023-12-22 00:37:41,353 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0678.mp4'.
+2023-12-22 00:37:41,461 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0825.mp4'.
+2023-12-22 00:37:41,528 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0433.mp4'.
+2023-12-22 00:37:41,608 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0859.mp4'.
+2023-12-22 00:37:41,723 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0072.mp4'.
+2023-12-22 00:37:41,783 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0406.mp4'.
+2023-12-22 00:37:41,900 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0465.mp4'.
+2023-12-22 00:37:41,974 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0381.mp4'.
+2023-12-22 00:37:42,020 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0458.mp4'.
+2023-12-22 00:37:42,159 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0545.mp4'.
+2023-12-22 00:37:42,249 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0759.mp4'.
+2023-12-22 00:37:42,308 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0593.mp4'.
+2023-12-22 00:37:42,383 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0070.mp4'.
+2023-12-22 00:37:42,520 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0325.mp4'.
+2023-12-22 00:37:42,571 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0574.mp4'.
+2023-12-22 00:37:42,618 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0449.mp4'.
+2023-12-22 00:37:42,771 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0067.mp4'.
+2023-12-22 00:37:42,876 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0131.mp4'.
+2023-12-22 00:37:42,944 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0149.mp4'.
+2023-12-22 00:37:42,975 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0741.mp4'.
+2023-12-22 00:37:43,135 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0036.mp4'.
+2023-12-22 00:37:43,217 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0200.mp4'.
+2023-12-22 00:37:43,306 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0537.mp4'.
+2023-12-22 00:37:43,413 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0553.mp4'.
+2023-12-22 00:37:43,502 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0413.mp4'.
+2023-12-22 00:37:43,780 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0765.mp4'.
+2023-12-22 00:37:43,853 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0684.mp4'.
+2023-12-22 00:37:43,888 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0743.mp4'.
+2023-12-22 00:37:43,938 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0342.mp4'.
+2023-12-22 00:37:44,037 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0127.mp4'.
+2023-12-22 00:37:44,164 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0307.mp4'.
+2023-12-22 00:37:44,352 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0330.mp4'.
+2023-12-22 00:37:44,422 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0917.mp4'.
+2023-12-22 00:37:44,469 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0522.mp4'.
+2023-12-22 00:37:44,586 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0162.mp4'.
+2023-12-22 00:37:44,697 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0165.mp4'.
+2023-12-22 00:37:44,873 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0093.mp4'.
+2023-12-22 00:37:44,905 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0440.mp4'.
+2023-12-22 00:37:45,121 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0348.mp4'.
+2023-12-22 00:37:45,182 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0283.mp4'.
+2023-12-22 00:37:45,264 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0311.mp4'.
+2023-12-22 00:37:45,335 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0666.mp4'.
+2023-12-22 00:37:45,404 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0920.mp4'.
+2023-12-22 00:37:45,479 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0271.mp4'.
+2023-12-22 00:37:45,647 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0401.mp4'.
+2023-12-22 00:37:45,717 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0772.mp4'.
+2023-12-22 00:37:45,784 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0335.mp4'.
+2023-12-22 00:37:45,856 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0645.mp4'.
+2023-12-22 00:37:45,920 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0533.mp4'.
+2023-12-22 00:37:46,022 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0544.mp4'.
+2023-12-22 00:37:46,113 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0637.mp4'.
+2023-12-22 00:37:46,201 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0253.mp4'.
+2023-12-22 00:37:46,296 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0686.mp4'.
+2023-12-22 00:37:46,448 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0767.mp4'.
+2023-12-22 00:37:46,508 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0802.mp4'.
+2023-12-22 00:37:46,590 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0182.mp4'.
+2023-12-22 00:37:46,652 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0931.mp4'.
+2023-12-22 00:37:46,700 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0828.mp4'.
+2023-12-22 00:37:46,768 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0154.mp4'.
+2023-12-22 00:37:47,065 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0011.mp4'.
+2023-12-22 00:37:47,149 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0768.mp4'.
+2023-12-22 00:37:47,191 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0695.mp4'.
+2023-12-22 00:37:47,344 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0579.mp4'.
+2023-12-22 00:37:47,427 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0084.mp4'.
+2023-12-22 00:37:47,508 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0869.mp4'.
+2023-12-22 00:37:47,579 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0588.mp4'.
+2023-12-22 00:37:47,735 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0212.mp4'.
+2023-12-22 00:37:47,794 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0875.mp4'.
+2023-12-22 00:37:47,850 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0415.mp4'.
+2023-12-22 00:37:47,952 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0528.mp4'.
+2023-12-22 00:37:48,017 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0062.mp4'.
+2023-12-22 00:37:48,176 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0112.mp4'.
+2023-12-22 00:37:48,223 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0206.mp4'.
+2023-12-22 00:37:48,303 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0446.mp4'.
+2023-12-22 00:37:48,333 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0049.mp4'.
+2023-12-22 00:37:48,406 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0758.mp4'.
+2023-12-22 00:37:48,546 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0157.mp4'.
+2023-12-22 00:37:48,648 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0368.mp4'.
+2023-12-22 00:37:48,699 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0650.mp4'.
+2023-12-22 00:37:48,793 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0539.mp4'.
+2023-12-22 00:37:48,866 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0025.mp4'.
+2023-12-22 00:37:49,003 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0566.mp4'.
+2023-12-22 00:37:49,056 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0039.mp4'.
+2023-12-22 00:37:49,181 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0704.mp4'.
+2023-12-22 00:37:49,245 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0680.mp4'.
+2023-12-22 00:37:49,399 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0132.mp4'.
+2023-12-22 00:37:49,520 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0079.mp4'.
+2023-12-22 00:37:49,640 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0558.mp4'.
+2023-12-22 00:37:49,754 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0285.mp4'.
+2023-12-22 00:37:49,898 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0486.mp4'.
+2023-12-22 00:37:50,005 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0358.mp4'.
+2023-12-22 00:37:50,110 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0729.mp4'.
+2023-12-22 00:37:50,153 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0847.mp4'.
+2023-12-22 00:37:50,206 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0041.mp4'.
+2023-12-22 00:37:50,351 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0022.mp4'.
+2023-12-22 00:37:50,497 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0924.mp4'.
+2023-12-22 00:37:50,577 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0710.mp4'.
+2023-12-22 00:37:50,661 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0346.mp4'.
+2023-12-22 00:37:50,721 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0816.mp4'.
+2023-12-22 00:37:50,767 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0779.mp4'.
+2023-12-22 00:37:50,819 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0008.mp4'.
+2023-12-22 00:37:50,877 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0504.mp4'.
+2023-12-22 00:37:50,971 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0907.mp4'.
+2023-12-22 00:37:51,037 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0700.mp4'.
+2023-12-22 00:37:51,094 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0123.mp4'.
+2023-12-22 00:37:51,174 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0065.mp4'.
+2023-12-22 00:37:51,251 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0659.mp4'.
+2023-12-22 00:37:51,342 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0129.mp4'.
+2023-12-22 00:37:51,409 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0363.mp4'.
+2023-12-22 00:37:51,440 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0092.mp4'.
+2023-12-22 00:37:51,502 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0124.mp4'.
+2023-12-22 00:37:51,559 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0689.mp4'.
+2023-12-22 00:37:51,618 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0549.mp4'.
+2023-12-22 00:37:51,669 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0337.mp4'.
+2023-12-22 00:37:51,757 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0788.mp4'.
+2023-12-22 00:37:51,871 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0126.mp4'.
+2023-12-22 00:37:51,954 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0806.mp4'.
+2023-12-22 00:37:52,031 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0662.mp4'.
+2023-12-22 00:37:52,150 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0938.mp4'.
+2023-12-22 00:37:52,207 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0236.mp4'.
+2023-12-22 00:37:52,301 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0217.mp4'.
+2023-12-22 00:37:52,463 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0439.mp4'.
+2023-12-22 00:37:52,544 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0599.mp4'.
+2023-12-22 00:37:52,745 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0527.mp4'.
+2023-12-22 00:37:52,892 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0506.mp4'.
+2023-12-22 00:37:52,965 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0077.mp4'.
+2023-12-22 00:37:53,088 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0831.mp4'.
+2023-12-22 00:37:53,193 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0830.mp4'.
+2023-12-22 00:37:53,337 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0795.mp4'.
+2023-12-22 00:37:53,418 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0172.mp4'.
+2023-12-22 00:37:53,536 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0109.mp4'.
+2023-12-22 00:37:53,586 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0646.mp4'.
+2023-12-22 00:37:53,688 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0734.mp4'.
+2023-12-22 00:37:53,911 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0749.mp4'.
+2023-12-22 00:37:54,056 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0784.mp4'.
+2023-12-22 00:37:54,115 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0181.mp4'.
+2023-12-22 00:37:54,233 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0735.mp4'.
+2023-12-22 00:37:54,331 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0392.mp4'.
+2023-12-22 00:37:54,477 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0691.mp4'.
+2023-12-22 00:37:54,548 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0929.mp4'.
+2023-12-22 00:37:54,615 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0492.mp4'.
+2023-12-22 00:37:54,678 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0317.mp4'.
+2023-12-22 00:37:54,723 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0199.mp4'.
+2023-12-22 00:37:54,753 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0552.mp4'.
+2023-12-22 00:37:54,883 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0365.mp4'.
+2023-12-22 00:37:54,986 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0071.mp4'.
+2023-12-22 00:37:55,055 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0531.mp4'.
+2023-12-22 00:37:55,157 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0445.mp4'.
+2023-12-22 00:37:55,338 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0418.mp4'.
+2023-12-22 00:37:55,463 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0837.mp4'.
+2023-12-22 00:37:55,571 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0761.mp4'.
+2023-12-22 00:37:55,622 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0508.mp4'.
+2023-12-22 00:37:55,756 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0387.mp4'.
+2023-12-22 00:37:55,835 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0391.mp4'.
+2023-12-22 00:37:55,954 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0369.mp4'.
+2023-12-22 00:37:56,026 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0720.mp4'.
+2023-12-22 00:37:56,088 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0913.mp4'.
+2023-12-22 00:37:56,247 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0278.mp4'.
+2023-12-22 00:37:56,345 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0061.mp4'.
+2023-12-22 00:37:56,466 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0538.mp4'.
+2023-12-22 00:37:56,519 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0060.mp4'.
+2023-12-22 00:37:56,541 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0397.mp4'.
+2023-12-22 00:37:56,648 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0480.mp4'.
+2023-12-22 00:37:56,720 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0294.mp4'.
+2023-12-22 00:37:56,799 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0148.mp4'.
+2023-12-22 00:37:56,860 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0716.mp4'.
+2023-12-22 00:37:56,916 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0436.mp4'.
+2023-12-22 00:37:56,958 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0078.mp4'.
+2023-12-22 00:37:57,022 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0085.mp4'.
+2023-12-22 00:37:57,092 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0843.mp4'.
+2023-12-22 00:37:57,150 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0801.mp4'.
+2023-12-22 00:37:57,233 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0432.mp4'.
+2023-12-22 00:37:57,277 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0692.mp4'.
+2023-12-22 00:37:57,349 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0473.mp4'.
+2023-12-22 00:37:57,410 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0159.mp4'.
+2023-12-22 00:37:57,503 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0495.mp4'.
+2023-12-22 00:37:57,556 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0461.mp4'.
+2023-12-22 00:37:57,610 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0355.mp4'.
+2023-12-22 00:37:57,700 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0631.mp4'.
+2023-12-22 00:37:57,826 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0799.mp4'.
+2023-12-22 00:37:57,900 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0740.mp4'.
+2023-12-22 00:37:57,964 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0350.mp4'.
+2023-12-22 00:37:58,047 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0661.mp4'.
+2023-12-22 00:37:58,091 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0328.mp4'.
+2023-12-22 00:37:58,150 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0161.mp4'.
+2023-12-22 00:37:58,234 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0228.mp4'.
+2023-12-22 00:37:58,296 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0813.mp4'.
+2023-12-22 00:37:58,376 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0322.mp4'.
+2023-12-22 00:37:58,403 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0142.mp4'.
+2023-12-22 00:37:58,506 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0005.mp4'.
+2023-12-22 00:37:58,601 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0094.mp4'.
+2023-12-22 00:37:58,687 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0257.mp4'.
+2023-12-22 00:37:58,773 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0570.mp4'.
+2023-12-22 00:37:58,863 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0043.mp4'.
+2023-12-22 00:37:58,944 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0769.mp4'.
+2023-12-22 00:37:59,015 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0739.mp4'.
+2023-12-22 00:37:59,061 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0864.mp4'.
+2023-12-22 00:37:59,183 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0903.mp4'.
+2023-12-22 00:37:59,241 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0937.mp4'.
+2023-12-22 00:37:59,301 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0305.mp4'.
+2023-12-22 00:37:59,479 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0378.mp4'.
+2023-12-22 00:37:59,530 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0581.mp4'.
+2023-12-22 00:37:59,637 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0187.mp4'.
+2023-12-22 00:37:59,766 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0775.mp4'.
+2023-12-22 00:37:59,872 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0898.mp4'.
+2023-12-22 00:37:59,946 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0196.mp4'.
+2023-12-22 00:38:00,037 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0852.mp4'.
+2023-12-22 00:38:00,118 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0884.mp4'.
+2023-12-22 00:38:00,183 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0019.mp4'.
+2023-12-22 00:38:00,261 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0274.mp4'.
+2023-12-22 00:38:00,342 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0725.mp4'.
+2023-12-22 00:38:00,396 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0441.mp4'.
+2023-12-22 00:38:00,454 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0277.mp4'.
+2023-12-22 00:38:00,550 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0633.mp4'.
+2023-12-22 00:38:00,658 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0669.mp4'.
+2023-12-22 00:38:00,819 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0592.mp4'.
+2023-12-22 00:38:00,888 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0851.mp4'.
+2023-12-22 00:38:00,977 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0509.mp4'.
+2023-12-22 00:38:01,070 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0810.mp4'.
+2023-12-22 00:38:01,186 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0505.mp4'.
+2023-12-22 00:38:01,280 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0462.mp4'.
+2023-12-22 00:38:01,339 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0755.mp4'.
+2023-12-22 00:38:01,427 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0264.mp4'.
+2023-12-22 00:38:01,518 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0308.mp4'.
+2023-12-22 00:38:01,581 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0020.mp4'.
+2023-12-22 00:38:01,638 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0567.mp4'.
+2023-12-22 00:38:01,823 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0035.mp4'.
+2023-12-22 00:38:01,893 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0272.mp4'.
+2023-12-22 00:38:01,972 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0390.mp4'.
+2023-12-22 00:38:02,041 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0922.mp4'.
+2023-12-22 00:38:02,080 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0202.mp4'.
+2023-12-22 00:38:02,158 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0818.mp4'.
+2023-12-22 00:38:02,274 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0490.mp4'.
+2023-12-22 00:38:02,332 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0357.mp4'.
+2023-12-22 00:38:02,419 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0675.mp4'.
+2023-12-22 00:38:02,466 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0572.mp4'.
+2023-12-22 00:38:02,634 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0895.mp4'.
+2023-12-22 00:38:02,724 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0194.mp4'.
+2023-12-22 00:38:02,783 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0919.mp4'.
+2023-12-22 00:38:02,838 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0016.mp4'.
+2023-12-22 00:38:02,972 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0762.mp4'.
+2023-12-22 00:38:03,093 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0583.mp4'.
+2023-12-22 00:38:03,154 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0460.mp4'.
+2023-12-22 00:38:03,207 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0143.mp4'.
+2023-12-22 00:38:03,285 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0296.mp4'.
+2023-12-22 00:38:03,375 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0063.mp4'.
+2023-12-22 00:38:03,416 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0746.mp4'.
+2023-12-22 00:38:03,472 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0396.mp4'.
+2023-12-22 00:38:03,537 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0255.mp4'.
+2023-12-22 00:38:03,582 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0727.mp4'.
+2023-12-22 00:38:03,626 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0536.mp4'.
+2023-12-22 00:38:03,677 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0668.mp4'.
+2023-12-22 00:38:03,886 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0824.mp4'.
+2023-12-22 00:38:04,053 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0256.mp4'.
+2023-12-22 00:38:04,121 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0059.mp4'.
+2023-12-22 00:38:04,248 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0464.mp4'.
+2023-12-22 00:38:04,398 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0501.mp4'.
+2023-12-22 00:38:04,519 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0611.mp4'.
+2023-12-22 00:38:04,661 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0858.mp4'.
+2023-12-22 00:38:04,738 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0086.mp4'.
+2023-12-22 00:38:04,812 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0856.mp4'.
+2023-12-22 00:38:04,885 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0167.mp4'.
+2023-12-22 00:38:04,999 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0577.mp4'.
+2023-12-22 00:38:05,138 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0186.mp4'.
+2023-12-22 00:38:05,204 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0289.mp4'.
+2023-12-22 00:38:05,295 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0426.mp4'.
+2023-12-22 00:38:05,529 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0712.mp4'.
+2023-12-22 00:38:05,624 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0166.mp4'.
+2023-12-22 00:38:05,720 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0605.mp4'.
+2023-12-22 00:38:05,822 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0101.mp4'.
+2023-12-22 00:38:05,892 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0796.mp4'.
+2023-12-22 00:38:05,978 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0119.mp4'.
+2023-12-22 00:38:06,048 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0235.mp4'.
+2023-12-22 00:38:06,102 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0873.mp4'.
+2023-12-22 00:38:06,207 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0263.mp4'.
+2023-12-22 00:38:06,265 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0760.mp4'.
+2023-12-22 00:38:06,348 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0615.mp4'.
+2023-12-22 00:38:06,504 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0880.mp4'.
+2023-12-22 00:38:06,594 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0715.mp4'.
+2023-12-22 00:38:06,739 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0706.mp4'.
+2023-12-22 00:38:06,809 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0861.mp4'.
+2023-12-22 00:38:06,946 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0422.mp4'.
+2023-12-22 00:38:07,035 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0469.mp4'.
+2023-12-22 00:38:07,131 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0703.mp4'.
+2023-12-22 00:38:07,186 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0708.mp4'.
+2023-12-22 00:38:07,242 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0225.mp4'.
+2023-12-22 00:38:07,269 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0288.mp4'.
+2023-12-22 00:38:07,326 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0774.mp4'.
+2023-12-22 00:38:07,390 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0080.mp4'.
+2023-12-22 00:38:07,504 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0717.mp4'.
+2023-12-22 00:38:07,564 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0246.mp4'.
+2023-12-22 00:38:07,673 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0773.mp4'.
+2023-12-22 00:38:07,747 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0210.mp4'.
+2023-12-22 00:38:07,821 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0175.mp4'.
+2023-12-22 00:38:07,903 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0738.mp4'.
+2023-12-22 00:38:07,946 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0823.mp4'.
+2023-12-22 00:38:08,014 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0848.mp4'.
+2023-12-22 00:38:08,111 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0900.mp4'.
+2023-12-22 00:38:08,182 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0912.mp4'.
+2023-12-22 00:38:08,332 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0232.mp4'.
+2023-12-22 00:38:08,440 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0877.mp4'.
+2023-12-22 00:38:08,560 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0467.mp4'.
+2023-12-22 00:38:08,600 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0789.mp4'.
+2023-12-22 00:38:08,674 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0702.mp4'.
+2023-12-22 00:38:08,775 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0239.mp4'.
+2023-12-22 00:38:08,863 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0279.mp4'.
+2023-12-22 00:38:08,991 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0331.mp4'.
+2023-12-22 00:38:09,065 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0731.mp4'.
+2023-12-22 00:38:09,168 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0562.mp4'.
+2023-12-22 00:38:09,208 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0896.mp4'.
+2023-12-22 00:38:09,271 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0034.mp4'.
+2023-12-22 00:38:09,346 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0048.mp4'.
+2023-12-22 00:38:09,443 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0437.mp4'.
+2023-12-22 00:38:09,482 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0655.mp4'.
+2023-12-22 00:38:09,536 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0037.mp4'.
+2023-12-22 00:38:09,631 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0160.mp4'.
+2023-12-22 00:38:09,736 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0821.mp4'.
+2023-12-22 00:38:09,807 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0183.mp4'.
+2023-12-22 00:38:09,900 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0259.mp4'.
+2023-12-22 00:38:09,975 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0115.mp4'.
+2023-12-22 00:38:10,036 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0584.mp4'.
+2023-12-22 00:38:10,076 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0140.mp4'.
+2023-12-22 00:38:10,137 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0658.mp4'.
+2023-12-22 00:38:10,221 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0050.mp4'.
+2023-12-22 00:38:10,303 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0282.mp4'.
+2023-12-22 00:38:10,346 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0442.mp4'.
+2023-12-22 00:38:10,398 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0179.mp4'.
+2023-12-22 00:38:10,466 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0068.mp4'.
+2023-12-22 00:38:10,538 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0435.mp4'.
+2023-12-22 00:38:10,642 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0139.mp4'.
+2023-12-22 00:38:10,674 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0403.mp4'.
+2023-12-22 00:38:10,753 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0889.mp4'.
+2023-12-22 00:38:10,921 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0013.mp4'.
+2023-12-22 00:38:10,997 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0226.mp4'.
+2023-12-22 00:38:11,079 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0402.mp4'.
+2023-12-22 00:38:11,294 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0886.mp4'.
+2023-12-22 00:38:11,343 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0885.mp4'.
+2023-12-22 00:38:11,445 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0223.mp4'.
+2023-12-22 00:38:11,538 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0665.mp4'.
+2023-12-22 00:38:11,684 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0102.mp4'.
+2023-12-22 00:38:11,753 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0155.mp4'.
+2023-12-22 00:38:11,834 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0147.mp4'.
+2023-12-22 00:38:11,898 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0609.mp4'.
+2023-12-22 00:38:11,977 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0766.mp4'.
+2023-12-22 00:38:12,060 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0409.mp4'.
+2023-12-22 00:38:12,134 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0118.mp4'.
+2023-12-22 00:38:12,202 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0893.mp4'.
+2023-12-22 00:38:12,249 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0110.mp4'.
+2023-12-22 00:38:12,317 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0334.mp4'.
+2023-12-22 00:38:12,411 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0428.mp4'.
+2023-12-22 00:38:12,557 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0487.mp4'.
+2023-12-22 00:38:12,619 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0872.mp4'.
+2023-12-22 00:38:12,751 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0329.mp4'.
+2023-12-22 00:38:12,800 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0707.mp4'.
+2023-12-22 00:38:12,917 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0471.mp4'.
+2023-12-22 00:38:12,995 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0685.mp4'.
+2023-12-22 00:38:13,085 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0064.mp4'.
+2023-12-22 00:38:13,139 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0640.mp4'.
+2023-12-22 00:38:13,205 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0647.mp4'.
+2023-12-22 00:38:13,250 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0906.mp4'.
+2023-12-22 00:38:13,313 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0833.mp4'.
+2023-12-22 00:38:13,427 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0776.mp4'.
+2023-12-22 00:38:13,484 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0791.mp4'.
+2023-12-22 00:38:13,541 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0507.mp4'.
+2023-12-22 00:38:13,675 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0935.mp4'.
+2023-12-22 00:38:13,794 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0266.mp4'.
+2023-12-22 00:38:13,873 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0087.mp4'.
+2023-12-22 00:38:14,025 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0654.mp4'.
+2023-12-22 00:38:14,097 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0372.mp4'.
+2023-12-22 00:38:14,165 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0203.mp4'.
+2023-12-22 00:38:14,292 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0750.mp4'.
+2023-12-22 00:38:14,338 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0250.mp4'.
+2023-12-22 00:38:14,446 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0353.mp4'.
+2023-12-22 00:38:14,535 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0518.mp4'.
+2023-12-22 00:38:14,607 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0214.mp4'.
+2023-12-22 00:38:14,674 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0664.mp4'.
+2023-12-22 00:38:14,738 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0842.mp4'.
+2023-12-22 00:38:14,792 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0237.mp4'.
+2023-12-22 00:38:14,910 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0286.mp4'.
+2023-12-22 00:38:15,031 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0863.mp4'.
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - 
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - Config: {'audio': {'tool': 'librosa', 'sample_rate': 22050, 'args': {'mfcc': {'n_mfcc': 20, 'htk': True}, 'zero_crossing_rate': {}, 'chroma_cqt': {}}}}
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - Initializing librosa audio feature extractor.
+2023-12-23 14:03:20,757 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-23 14:03:32,711 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0216.mp4'.
+2023-12-23 14:03:35,103 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0853.mp4'.
+2023-12-23 14:03:36,992 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0404.mp4'.
+2023-12-23 14:03:39,313 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0089.mp4'.
+2023-12-23 14:03:41,169 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0384.mp4'.
+2023-12-23 14:03:43,181 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0030.mp4'.
+2023-12-23 14:03:44,444 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0610.mp4'.
+2023-12-23 14:03:46,331 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0455.mp4'.
+2023-12-23 14:03:47,442 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0244.mp4'.
+2023-12-23 14:05:37,488 - MMSA-FET [INFO] - 
+2023-12-23 14:05:37,489 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-23 14:05:37,489 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-23 14:05:37,489 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-23 14:05:37,489 - MMSA-FET [INFO] - Config: {'video': {'tool': 'openface', 'fps': 30, 'multiFace': {'enable': True, 'device': 'cuda:0', 'facedetScale': 0.25, 'minTrack': 10, 'numFailedDet': 10, 'minFaceSize': 1, 'cropScale': 0.4}, 'average_over': 1, 'args': {'hogalign': False, 'simalign': False, 'nobadaligned': False, 'landmark_2D': True, 'landmark_3D': True, 'pdmparams': True, 'head_pose': True, 'action_units': True, 'gaze': True, 'tracked': False}}}
+2023-12-23 14:05:37,489 - MMSA-FET [INFO] - Initializing OpenFace video feature extractor...
+2023-12-23 14:05:37,489 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-23 14:08:08,226 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0216.mp4'.
+2023-12-23 14:09:49,057 - MMSA-FET [INFO] - 
+2023-12-23 14:09:49,057 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-23 14:09:49,058 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-23 14:09:49,058 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-23 14:09:49,058 - MMSA-FET [INFO] - Config: {'text': {'model': 'bert', 'device': 'cpu', 'pretrained': 'bert-base-uncased', 'args': {}}}
+2023-12-23 14:09:49,058 - MMSA-FET [INFO] - Initializing BERT text feature extractor.
+2023-12-23 14:10:49,154 - MMSA-FET [ERROR] - Failed to initialize bertExtractor.
+2023-12-23 14:13:18,850 - MMSA-FET [INFO] - 
+2023-12-23 14:13:18,851 - MMSA-FET [INFO] - ========================== MMSA-FET Started ==========================
+2023-12-23 14:13:18,851 - MMSA-FET [INFO] - Temporary directory: feat_extract/MMSA-FET/tmp
+2023-12-23 14:13:18,851 - MMSA-FET [INFO] - Log file: 'feat_extract/MMSA-FET/log/MMSA-FET.log'
+2023-12-23 14:13:18,851 - MMSA-FET [INFO] - Config: {'text': {'model': 'bert', 'device': 'cpu', 'pretrained': 'bert-base-uncased', 'args': {}}}
+2023-12-23 14:13:18,851 - MMSA-FET [INFO] - Initializing BERT text feature extractor.
+2023-12-23 14:13:20,027 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0485.mp4'.
+2023-12-23 14:13:20,667 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0216.mp4'.
+2023-12-23 14:13:20,735 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0853.mp4'.
+2023-12-23 14:13:20,773 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0404.mp4'.
+2023-12-23 14:13:20,846 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0089.mp4'.
+2023-12-23 14:13:20,914 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0384.mp4'.
+2023-12-23 14:13:20,973 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0030.mp4'.
+2023-12-23 14:13:21,037 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0610.mp4'.
+2023-12-23 14:13:21,138 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0455.mp4'.
+2023-12-23 14:13:21,268 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0244.mp4'.
+2023-12-23 14:13:21,387 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0560.mp4'.
+2023-12-23 14:13:21,510 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0176.mp4'.
+2023-12-23 14:13:21,568 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0347.mp4'.
+2023-12-23 14:13:21,683 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0275.mp4'.
+2023-12-23 14:13:21,722 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0614.mp4'.
+2023-12-23 14:13:21,816 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0451.mp4'.
+2023-12-23 14:13:21,936 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0603.mp4'.
+2023-12-23 14:13:22,021 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0116.mp4'.
+2023-12-23 14:13:22,069 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0193.mp4'.
+2023-12-23 14:13:22,176 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0168.mp4'.
+2023-12-23 14:13:22,210 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0628.mp4'.
+2023-12-23 14:13:22,321 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0185.mp4'.
+2023-12-23 14:13:22,463 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0854.mp4'.
+2023-12-23 14:13:22,525 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0844.mp4'.
+2023-12-23 14:13:22,666 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0204.mp4'.
+2023-12-23 14:13:22,753 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0395.mp4'.
+2023-12-23 14:13:22,792 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0044.mp4'.
+2023-12-23 14:13:22,908 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0052.mp4'.
+2023-12-23 14:13:22,959 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0860.mp4'.
+2023-12-23 14:13:23,065 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0594.mp4'.
+2023-12-23 14:13:23,284 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0291.mp4'.
+2023-12-23 14:13:23,396 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0753.mp4'.
+2023-12-23 14:13:23,523 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0800.mp4'.
+2023-12-23 14:13:23,621 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0245.mp4'.
+2023-12-23 14:13:23,707 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0156.mp4'.
+2023-12-23 14:13:23,788 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0130.mp4'.
+2023-12-23 14:13:23,939 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0304.mp4'.
+2023-12-23 14:13:23,968 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0822.mp4'.
+2023-12-23 14:13:24,054 - MMSA-FET [INFO] - Extracting features from 'data/LVU/train/videos/0371.mp4'.
