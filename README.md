@@ -3,8 +3,7 @@
 All the data, processed data, extracted features, pretrained model weights, results, supporting sources and our docker image can be downloaded at [Baidu Disk](https://pan.baidu.com/s/1capDCX6_55jdSW8Yx3eGBg?pwd=4ac6). 
 
 ## 1.Quick Start
-⚡ If you use the docker image that we provided and download all the data, features and model weights directly, you can go straight to perform inference. 
-Download our docker image and load it:
+⚡ If you use the docker image that we provided and download all the data, features and model weights directly, you can go straight to perform inference.
 ```
 sudo docker load -i yfraquelle_mmsf_env_v1.tar
 sudo docker run -it -v /host/path/to/MMSF:/docker/path/to/MMSF --ipc=host --net=host <image_id> /bin/bash
