@@ -9,8 +9,8 @@ class MMSATrainConfig(object):
     # modal_list = ['text']  # 'video', 'audio', 'text'
     # senti_modal_list = ['text']
 
-    modal_list = ['video','audio']  # 'video', 'audio', 'text'
-    senti_modal_list = ['video', 'audio']
+    # modal_list = ['video','audio']  # 'video', 'audio', 'text'
+    # senti_modal_list = ['video', 'audio']
 
     # modal_list = ['video','text']  # 'video', 'audio', 'text'
     # senti_modal_list = ['video', 'text']
@@ -18,8 +18,8 @@ class MMSATrainConfig(object):
     # modal_list = ['audio','text']  # 'video', 'audio', 'text'
     # senti_modal_list = ['audio', 'text']
 
-    # modal_list = ['video','audio','text']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['video', 'audio', 'text']
+    modal_list = ['video','audio','text']  # 'video', 'audio', 'text'
+    senti_modal_list = ['video', 'audio', 'text']
     senti_feat_fusion_strategies = {'video': 'fusion', 'audio': 'fusion', 'text': 'fusion'}
     early_fusion = False
 
