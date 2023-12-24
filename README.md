@@ -7,7 +7,8 @@ All the data, processed data, extracted features, pretrained model weights, resu
 Download our docker image and load it:
 ```
 sudo docker load -i yfraquelle_mmsf_env_v1.tar
-cd /path/to/MMSF
+sudo docker run -it -v /host/path/to/MMSF:/docker/path/to/MMSF --ipc=host --net=host <image_id> /bin/bash
+cd /docker/path/to/MMSF
 export PYTHONPATH=$PWD
 python prediction/run_mmsf.py --test
 ```
