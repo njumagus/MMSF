@@ -1,31 +1,59 @@
 class MMSATrainConfig(object):
-    #optional params
-    # modal_list = ['video']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['video']
+    # optional params sets
+    # modal_list = ['video']
+    # senti_modal_list = [] # using ['video'] for w/ sentiment
+    # early_fusion = True # only using True when applying single modal
+    # batch_size = 8
+    # lr = 1e-5
+    # weight_decay = 2e-5
 
-    # modal_list = ['audio']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['audio']
+    # modal_list = ['audio']
+    # senti_modal_list = [] # # using ['audio'] for w/ sentiment
+    # early_fusion = True # only using True when applying single modal
+    # batch_size = 8
+    # lr = 1e-5
+    # weight_decay = 2e-5
 
-    # modal_list = ['text']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['text']
+    # modal_list = ['text']
+    # senti_modal_list = [] # using ['text'] for w/ sentiment
+    # early_fusion = True # only using True when applying single modal
+    # batch_size = 8
+    # lr = 1e-5
+    # weight_decay = 2e-5
 
-    # modal_list = ['video','audio']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['video', 'audio']
+    # modal_list = ['video','audio']
+    # senti_modal_list = [] # using ['video', 'audio'] for w/ sentiment
+    # early_fusion = False # False for late fusion, True for early fusion
+    # batch_size = 16
+    # lr = 1e-5
+    # weight_decay = 2e-5
 
-    # modal_list = ['video','text']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['video', 'text']
+    # modal_list = ['video','text']
+    # senti_modal_list = [] # using ['video', 'text'] for w/ sentiment
+    # early_fusion = False # False for late fusion, True for early fusion
+    # batch_size = 16
+    # lr = 1e-5
+    # weight_decay = 2e-5
 
-    # modal_list = ['audio','text']  # 'video', 'audio', 'text'
-    # senti_modal_list = ['audio', 'text']
+    # modal_list = ['audio','text']
+    # senti_modal_list = ['audio', 'text'] # using ['audio', 'text'] for w/ sentiment
+    # early_fusion = False # False for late fusion, True for early fusion
+    # batch_size = 16
+    # lr = 1e-5
+    # weight_decay = 2e-5
 
-    modal_list = ['video','audio','text']  # 'video', 'audio', 'text'
-    senti_modal_list = ['video', 'audio', 'text']
+    # modal_list = ['video','audio','text']
+    # senti_modal_list = ['video','audio','text'] # using ['video','audio','text'] for w/ sentiment
+    # early_fusion = False # False for late fusion, True for early fusion
+    # batch_size = 32
+    # lr = 2e-3
+    # weight_decay = 2e-4
+
     senti_feat_fusion_strategies = {'video': 'fusion', 'audio': 'fusion', 'text': 'fusion'}
-    early_fusion = False
 
+    senti_attention_models = {'video': 'conv', 'audio': 'conv', 'text': 'conv'}
     modal_tool_list = {'video': 'openface', 'audio': 'librosa', 'text': 'bert'}
     # load_model_path = 'checkpoints/model.pth'  # 加载预训练的模型的路径，为None代表不加载
-    senti_attention_models = {'video':'conv', 'audio':'conv', 'text':'conv'}
     #senti_feat_fusion_strategies = {'video':'product', 'audio':'product', 'text':'product'}
     senti_modal_extractor = 'self_mm'
     video_senti_feat_dim = 300
@@ -37,13 +65,10 @@ class MMSATrainConfig(object):
     late_fusion_strategy = 'weightmean'
 
     seed_idx = 10
-    batch_size = 32  # batch size 16
     print_freq = 10  # print info every N batch
     save_freq = 10  # save model every N epoches
     max_epoch = 100
-    lr = 2e-3  # initial learning rate
     lr_decay = 0.95  # when val_loss increase, lr = lr*lr_decay
-    weight_decay = 2e-4
     when_to_decay_lr = 20
 
     # "batch_size": 16,

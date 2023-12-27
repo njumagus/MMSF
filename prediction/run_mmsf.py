@@ -44,8 +44,8 @@ class MMSF_Runner:
         self.feat_root = MMSATrainConfig.feat_root
         self.early_fusion_strategy = MMSATrainConfig.early_fusion_strategy
         self.late_fusion_strategy = MMSATrainConfig.late_fusion_strategy
-        if self.senti_attention_models != {}:
-            self.save_dir = 'MultimodalTransformer_withSentiAttention/with_senti'+self.senti_attention_model_prefix+'/'
+        if len(self.senti_modal_list)>0:
+            self.save_dir = 'MultimodalTransformer_withSentiAttention/with_senti/'
         else:
             self.save_dir = 'MultimodalTransformer_withSentiAttention/without_senti/'
         # if with_senti_attention:
