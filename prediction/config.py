@@ -42,12 +42,12 @@ class MMSATrainConfig(object):
     # lr = 1e-5
     # weight_decay = 2e-5
 
-    # modal_list = ['video','audio','text']
-    # senti_modal_list = ['video','audio','text'] # using ['video','audio','text'] for w/ sentiment
-    # early_fusion = False # False for late fusion, True for early fusion
-    # batch_size = 32
-    # lr = 2e-3
-    # weight_decay = 2e-4
+    modal_list = ['video','audio','text']
+    senti_modal_list = ['video','audio','text'] # using ['video','audio','text'] for w/ sentiment
+    early_fusion = False # False for late fusion, True for early fusion
+    batch_size = 32
+    lr = 2e-3
+    weight_decay = 2e-4
 
     senti_feat_fusion_strategies = {'video': 'fusion', 'audio': 'fusion', 'text': 'fusion'}
 
