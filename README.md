@@ -1,6 +1,6 @@
 # MMSF: A Multimodal Sentiment-Fused Method to Recognize Video Speaking Style
 
-All the data, processed data, extracted features, pretrained model weights, results, supporting sources and our docker image can be downloaded at [Baidu Disk](https://pan.baidu.com/s/1capDCX6_55jdSW8Yx3eGBg?pwd=4ac6). 
+All the data, processed data, extracted features, pretrained model weights, results, supporting sources and our docker image can be downloaded at [Baidu Disk](https://pan.baidu.com/s/1capDCX6_55jdSW8Yx3eGBg?pwd=4ac6) or [OneDrive](https://1drv.ms/f/s!AqIJSYD5gt-YlC-D4ONCfKefbNKI?e=aC8Xhw). 
 
 ## 1.Quick Start
 ⚡ If you use the docker image that we provided and download all the data, features and model weights directly, you can go straight to perform inference.
@@ -22,7 +22,7 @@ export PYTHONPATH=$PWD
 
 
 ## 3.Preparing Dataset
-⚡ All the data and the processed data are compressed to "data.*" in our Baidu Disk. 
+⚡ All the data and the processed data are compressed to "data.*" in our Baidu Disk/OneDrive. 
 ### Data Download
 Download [LVU dataset](https://github.com/chaoyuaw/lvu) and unzip the data to data/LVU/raw.
 
@@ -77,7 +77,7 @@ python data_process/subtitle_process.py
 
 
 ## 4.Feature Extract
-⚡ All the extracted data are compressed to "MMSA_feat.zip" in our Baidu Disk.
+⚡ All the extracted data are compressed to "MMSA_feat.zip" in our Baidu Disk/OneDrive.
 
 Install MMSA-FET following https://github.com/thuiar/MMSA-FET/wiki/Dependency-Installation: 
 Download python packages:
@@ -102,7 +102,7 @@ python -m MSA_FET install
 cd ..
 ```
 
-Download "bert-base-uncased" from the official link or the Baidu Disk that we provided and unzip it to the root. 
+Download "bert-base-uncased" from the official link or the Baidu Disk/OneDrive that we provided and unzip it to the root. 
 Download the feature extraction model weights from "feat_extract.zip" in the Baidu Disk that we provided and unzip it into the "feat_extract" folder. 
 Download the "sources.zip" and unzip it to the root. 
 
@@ -117,7 +117,7 @@ python feat_extract/MMSA_senti_feat.py
 
 
 ## 5.Training and Inference
-⚡ The pretrained model weights and results can be downloaded directly from "prediction.zip" in our Baidu Disk.
+⚡ The pretrained model weights and results can be downloaded directly from "prediction.zip" in our Baidu Disk/OneDrive.
 
 Install python packages:
 ```
