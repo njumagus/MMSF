@@ -22,17 +22,20 @@ class openfaceExtractor(baseExtractor):
                 logger.warning("'average_over' is less than 1, set to 1.")
             else:
                 self.pool_size = self.config['average_over']
-                
+
             self.args = self._parse_args(self.config['args'])
             self.tool_dir = Path(__file__).parent.parent.parent / "exts" / "OpenFace"
             if platform.system() == 'Windows':
-                self.tool = self.tool_dir / "FeatureExtraction.exe"
+                self.tool = "./FeatureExtraction.exe" #self.tool_dir / "FeatureExtraction.exe"
             elif platform.system() == 'Linux':
-                self.tool = self.tool_dir / "FeatureExtraction"
+                self.tool = "./FeatureExtraction" #self.tool_dir / "FeatureExtraction"
             else:
                 raise RuntimeError("Cannot Determine OS type.")
-            if not self.tool.is_file():
-                raise FileNotFoundError("OpenFace tool not found.")
+
+            print("looking for OpenFace in", self.tool)
+
+            #if not self.tool.is_file():
+            #    raise FileNotFoundError("OpenFace tool not found.")
         except Exception as e:
             self.logger.error("Failed to initialize mediapipeExtractor.")
             raise e
@@ -76,13 +79,16 @@ class openfaceExtractor(baseExtractor):
         """
         try:
             args = self.args.copy()
-            args.extend(['-fdir', str(img_dir), '-out_dir', str(img_dir)])
+            args.extend(['-fdir', str(Path(img_dir).absolute()), '-out_dir', str(Path(img_dir).absolute())])
             # if not tool_output:
             #     args.append('-quiet')
             cmd = str(self.tool) + " " + " ".join(args)
             print('here',cmd)
             t1 = time.perf_counter()
+            prev = os.getcwd()
+            os.chdir(self.tool_dir)
             os.system(cmd)
+            os.chdir(prev)
             t2 = time.perf_counter()
             print('here cmd end/min:',((t2-t1)/60.0))
 

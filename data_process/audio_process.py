@@ -23,6 +23,8 @@ class AudioProcess():
                 continue
             print(video_id)
             video_path = os.path.join(self.videos_dir,video_name)
+            if not os.path.isfile(video_path):
+                continue
             target_audio_path = os.path.join(self.wavs_dir,str(video_id).zfill(4)+'.wav')
             call_list = ['ffmpeg']
             call_list += ['-v', 'quiet']
