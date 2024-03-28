@@ -152,7 +152,7 @@ def evaluate_network(files, args):
     for file in files:
         fileName = os.path.splitext(file.split('/')[-1])[0] # Load audio and video
         _, audio = wavfile.read(os.path.join(args['pycropPath'], fileName + '.wav'))
-        audioFeature = python_speech_features.mfcc(audio, 16000, numcep = 13, winlen = 0.025, winstep = 0.010)
+        audioFeature = python_speech_features.mfcc(audio, 16000, numcep = 13, winlen = 0.025, winstep = 0.010) if len(audio) > 0 else numpy.array([[]])
         video = cv2.VideoCapture(os.path.join(args['pycropPath'], fileName + '.avi'))
         videoFeature = []
         while video.isOpened():

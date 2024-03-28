@@ -29,6 +29,8 @@ class SubtitleProcess():
                 continue
             print(video_id)
             audio_path = os.path.join(self.wavs_dir,str(video_id).zfill(4)+'.wav')
+            if not os.path.isfile(audio_path):
+                continue
             # audio_file = wave.open(audio_path, 'r')
             fs, data = wavfile.read(audio_path)
             translate_txt = ars.stt(data)

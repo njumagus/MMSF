@@ -19,6 +19,8 @@ def generate_MMSA_label_csv():
     total_dict['val'] = json.load(open(os.path.join(data_root,'val','val_dict.json')))
     total_dict['test'] = json.load(open(os.path.join(data_root,'test','test_dict.json')))
 
+    os.makedirs(feat_root)
+
     for mode in total_dict:
         videos_to_pass = pass_videos['lvu'][mode]
         for key in total_dict[mode]:
@@ -26,7 +28,10 @@ def generate_MMSA_label_csv():
                 continue
             video_id = total_dict[mode][key]['video_id']
             speaking_style_cate = total_dict[mode][key]['class_id']
-            text = open(os.path.join(data_root,mode,'subtitles_txt',str(video_id).zfill(4)+'.txt'), 'r').readline()
+            path = os.path.join(data_root,mode,'subtitles_txt',str(video_id).zfill(4)+'.txt')
+            if not os.path.isfile(path):
+                continue
+            text = open(path, 'r').readline()
             csv_lines.append({'video_id':mode, 'clip_id':str(video_id).zfill(4), 'text':text, 'label':0, 'label_T':0,'label_A':0,'label_V':0, 'annotation': speaking_style_cate, 'mode':mode})
     df = pd.DataFrame(csv_lines, columns=csv_columes)
     df.to_csv(os.path.join(feat_root,'label.csv'), index=False)
@@ -106,12 +111,17 @@ def generate_MMSA_feat(modal, modal_tool, modes = ['train', 'val', 'test']):
         if int(file_id) in pass_videos['lvu'][mode]:
             continue
         video_file = file_info[key]['video_file_path']
+        if not os.path.exists(video_file):
+            continue
         text_file = file_info[key]['text_file_path']
+        if not os.path.exists(text_file):
+            continue
         out_file_path = os.path.join(feat_org_dir,file_id + '.pkl')
         if os.path.exists(out_file_path):
             processed_cnt += 1
             print(mode + ' '+file_id + ' process:' + str(processed_cnt) + '/' + str(file_total_cnt))
             continue
+        print("fet.run_single", video_file, text_file)
         res = fet.run_single(in_file=video_file,text_file=text_file)
         processed_cnt += 1
         print(mode + ' '+file_id + ' process:'+str(processed_cnt)+'/'+str(file_total_cnt))

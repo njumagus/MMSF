@@ -102,8 +102,8 @@ python -m MSA_FET install
 cd ..
 ```
 
-Download "bert-base-uncased" from the official link or Baidu Disk/OneDrive that we provided and unzip it to the root. 
-Download the feature extraction model weights from "feat_extract.zip" in the Baidu Disk/OneDrive that we provided and unzip it into the "feat_extract" folder. 
+Download "bert-base-uncased" from the official link or the Baidu Disk/OneDrive that we provided and unzip it to the root. 
+Download the feature extraction model weights from "feat_extract.zip" in the Baidu Disk that we provided and unzip it into the "feat_extract" folder. 
 Download the "sources.zip" and unzip it to the root. 
 
 Run scripts:

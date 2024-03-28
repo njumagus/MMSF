@@ -30,6 +30,8 @@ class VideoProcess():
                 continue
             print(video_id)
             input_path = os.path.join(self.video_dir,video_name)
+            if not os.path.isfile(input_path):
+                continue
             output_path = os.path.join(self.processed_videos_dir,video_name)
             info = ffmpeg.probe(input_path)
             duration = int(float(info['streams'][0]['duration']))
