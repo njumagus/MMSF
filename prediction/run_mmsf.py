@@ -81,7 +81,6 @@ class MMSF_Runner:
         np.random.seed(seed)
         random.seed(seed)
         torch.backends.cudnn.deterministic = True
-    # 设置随机数种子
 
     def train(self):
         lr = MMSATrainConfig.lr
@@ -103,8 +102,8 @@ class MMSF_Runner:
         criterion = nn.CrossEntropyLoss().cuda()
         optimizer = optim.Adam([{'params': [param for name, param in model.named_parameters()]}, ], lr=lr)  # , weight_decay=0.0000001, momentum=0.9
         optimizer.zero_grad()
-        # step4: 统计指标：平滑处理之后的损失，还有混淆矩阵
-        loss_meter = meter.AverageValueMeter() #计算list的平均值和方差
+
+        loss_meter = meter.AverageValueMeter()
         confusion_matrix = meter.ConfusionMeter(k=MMSATrainConfig.category_num)
         previous_loss = 1000
         best_val_acc = 0
@@ -133,7 +132,7 @@ class MMSF_Runner:
                 if not self.early_fusion and len(self.modal_list)>1:
                     for modal_output in modal_output_list:
                         loss += criterion(modal_output, cate_id)
-                # 更新统计指标以及可视化
+
                 loss_meter.add(loss.data.cpu())
                 confusion_matrix.add(output.data, cate_id.data)
                 loss.backward()
@@ -142,7 +141,7 @@ class MMSF_Runner:
                 if i % MMSATrainConfig.print_freq == ( MMSATrainConfig.print_freq - 1 ):
                     print("Epoch: " + str(epoch) + " Batch: "+str(i) + " loss: "+str(loss_meter.value()[0]))
                     self.lossfile.write("Epoch: " + str(epoch) + " Batch: "+str(i) + " loss: "+str(loss_meter.value()[0])+'\n')
-            #*****val
+
             model.eval()
             val_cm, val_accuracy, val_top1_acc,val_f1, val_loss = self.val('val',model, val_dataloader)
             test_cm, test_accuracy, test_top1_acc,test_f1, test_loss = self.val('test',model, test_dataloader)
@@ -154,7 +153,6 @@ class MMSF_Runner:
             self.lossfile.write("===Epoch: " + str(epoch) + ' val loss: '+ str(val_loss) + ' val_top1_acc: ' + str(val_top1_acc)+'\n')
             self.lossfile.write("===Epoch: " + str(epoch) + ' test loss: '+ str(test_loss)  + ' test_top1_acc: ' + str(test_top1_acc)+ ' test_f1: ' + str(test_f1)+'\n')
             if val_top1_acc > best_val_acc:
-                # 根据验证集的结果保存最好的模型
                 best_val_acc = val_top1_acc
                 best_val_test_acc = test_top1_acc
                 best_val_epoch_num = epoch
@@ -176,7 +174,7 @@ class MMSF_Runner:
                 # torch.save(model.state_dict(),save_checkpoint_dir + "_".join(modal_list) + "_senti_" + '_'.join(senti_modal_list)+'_'+str(epoch).zfill(6)+'.pt')
                 print(self.save_checkpoint_dir + "_".join(self.modal_list) + "_senti_" + '_'.join(self.senti_modal_list)+'_'+str(epoch).zfill(6)+'.pt')
                 self.lossfile.write(self.save_checkpoint_dir + "_".join(self.modal_list) + "_senti_" + '_'.join(self.senti_modal_list)+'_'+str(epoch).zfill(6)+'.pt\n')
-            # 如果损失不再下降，则降低学习率
+
             if loss_meter.value()[0] > previous_loss:
                 lr = lr * MMSATrainConfig.lr_decay
                 for param_group in optimizer.param_groups:
@@ -207,7 +205,7 @@ class MMSF_Runner:
             if not self.early_fusion and len(self.modal_list) > 1:
                 for modal_output in modal_output_list:
                     loss += criterion(modal_output, cate_id)
-            # 更新统计指标以及可视化
+
             loss_meter.add(loss.data.cpu())
             confusion_matrix.add(output.data, cate_id.data)
             for j, video in enumerate(video_id):

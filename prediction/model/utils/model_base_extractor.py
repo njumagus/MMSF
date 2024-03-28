@@ -32,7 +32,6 @@ class BaseExtractorModel(nn.Module):
         else:
             # self.model = BertTextEncoder(use_finetune=BaseExtractorModelConfig.bert_finetune, transformers=BaseExtractorModelConfig.transformers, pretrained=BaseExtractorModelConfig.pretrained)
             # for param in self.model.parameters():
-            #     #固定bert
             #     param.requires_grad = False
             # self.post_dropout = nn.Dropout(p=BaseExtractorModelConfig.post_text_dropout)
             self.post_layer_1 = nn.Linear(BaseExtractorModelConfig.text_out, BaseExtractorModelConfig.post_text_dim)

@@ -71,7 +71,6 @@ def paddingSequence(sequences, value='zero', location='end', is_bert=False):
         # use (mean + 3 * std) as the max length
         final_length = int(np.mean(lengths) + 3 * np.std(lengths))
         if is_bert and final_length > 512:
-            #因为bert模型只能处理seq_len在512以下的
             final_length = 512
         print('final_length:',final_length, ' mean_length:', int(np.mean(lengths)), ' std_lenght:', int(np.std(lengths)))
         final_sequence = np.zeros([len(sequences), final_length, feature_dim])
@@ -125,7 +124,6 @@ def generate_MMSA_feat(modal, modal_tool, modes = ['train', 'val', 'test']):
         res = fet.run_single(in_file=video_file,text_file=text_file)
         processed_cnt += 1
         print(mode + ' '+file_id + ' process:'+str(processed_cnt)+'/'+str(file_total_cnt))
-        #将MMSA-FET的run_single的源码做了修改，只获得未经加工过的纯特征，然后后续的padding和保存在本generate_MMSA_feat方法里做
         with open(out_file_path, 'wb') as f:
             pickle.dump(res, f)
 
@@ -193,9 +191,7 @@ if args.label:
     generate_MMSA_label_csv()
 elif args.audio:
     generate_MMSA_feat(modal='audio', modal_tool='librosa')
-    #先存储特征再padding，因为怕遇到有问题的视频，直接断掉，前面的特征都白导出了
     padding_MSA_feats(modal='audio', modal_tool='librosa')
-    # 建了一个padding文件夹存储padding后特征是怕padding过程出问题，把原本的特征覆盖了，等padding都处理完，padding后的特征就可以取代原特征了
 elif args.video:
     generate_MMSA_feat(modal='video', modal_tool='openface')
     padding_MSA_feats(modal='video', modal_tool='openface')

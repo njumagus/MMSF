@@ -3,11 +3,6 @@ from config import MMSATrainConfig
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 import numpy as np
 
-#Readme:
-#计算accuracy和F1score作为评价指标：
-#可以直接把8-25行注释掉，在28/29行填入自己的json的路径就行(json的格式应该是{clip_id:speaking_style_id})
-#或者直接在76-77行传入对应的gt_list和pred_list（格式是[clip1_speaking_id, clip2_speaking_id, clip3_speaking_id,])
-
 pass_videos = {'train': [125, 345, 780, 756], 'val': [119, 193], 'test': [8, 177, 151], }
 
 

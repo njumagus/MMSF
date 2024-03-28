@@ -53,7 +53,7 @@ class MMSATrainConfig(object):
 
     senti_attention_models = {'video': 'conv', 'audio': 'conv', 'text': 'conv'}
     modal_tool_list = {'video': 'openface', 'audio': 'librosa', 'text': 'bert'}
-    # load_model_path = 'checkpoints/model.pth'  # 加载预训练的模型的路径，为None代表不加载
+    # load_model_path = 'checkpoints/model.pth'
     #senti_feat_fusion_strategies = {'video':'product', 'audio':'product', 'text':'product'}
     senti_modal_extractor = 'self_mm'
     video_senti_feat_dim = 300
@@ -200,14 +200,14 @@ class SELFMMConfig(object):
 class DefaultConfig(object):
     #optional params
     modal_list = ['text']  # 'video', 'entity', 'audio', 'text'
-    # load_model_path = 'checkpoints/model.pth'  # 加载预训练的模型的路径，为None代表不加载
+    # load_model_path = 'checkpoints/model.pth'
     batch_size = 32  # batch size
     print_freq = 5  # print info every N batch
     save_freq = 10  # save model every N epoches
     max_epoch = 100
     lr = 0.001  # initial learning rate
     lr_decay = 0.95  # when val_loss increase, lr = lr*lr_decay
-    weight_decay = 1e-4  # 损失函数
+    weight_decay = 1e-4
     #static params
     category_num = 5
     pass_videos = {'train':[125, 345, 780, 756], 'val':[119, 193], 'test':[8, 177 ,151], }

@@ -52,7 +52,6 @@ class SELF_MM(nn.Module):
         self.post_video_layer_3 = nn.Linear(SELFMMConfig.post_video_dim, 1)
 
         self.load_state_dict({k[6:]:v for k,v in torch.load('model/pretrained_models/self_mm-mosi_lvu_outputdim300_bertfinetune.pth').items()})
-        #self_mm-mosi_lvu_outputdim300_bertfinetune.pth的参数的key多了一个Model.
         for model in [self.text_model, self.audio_model, self.video_model,
                       self.post_fusion_dropout, self.post_fusion_layer_1, self.post_fusion_layer_2, self.post_fusion_layer_3,
                       self.post_text_dropout, self.post_text_layer_1, self.post_text_layer_2, self.post_text_layer_3,

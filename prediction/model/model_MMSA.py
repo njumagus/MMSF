@@ -81,7 +81,6 @@ class FeatSentiPredictionModel(nn.Module):
                 self.proj2 = nn.Linear(self.combined_dim, self.combined_dim)
                 self.out_layer = nn.Linear(self.combined_dim, output_dim)
             elif self.early_fusion_strategy == 'transformer':
-                #如果要探究多模态之间的影响，就要像multiTransformer中那样，先探索其他模态对某一模态的影响，然后再把所有带影响的模态拼接再预测
                 raise ValueError("to be fixed")
             else:
                 raise ValueError("Unknown early fusion strategy type")
@@ -143,7 +142,6 @@ class FeatSentiPredictionModel(nn.Module):
                 result = self.out_layer(last_h_proj)
                 output = F.softmax(result, dim=1)
             elif self.early_fusion_strategy == 'transformer':
-                # 如果要探究多模态之间的影响，就要像multiTransformer中那样，先探索其他模态对某一模态的影响，然后再把所有带影响的模态拼接再预测
                 raise ValueError("to be fixed")
             else:
                 raise ValueError("Unknown early fusion strategy type")
@@ -184,17 +182,14 @@ class FeatSentiFusionModel(nn.Module):
 
         if modal == 'text':
             self.orig_d = MMSAModelConfig.orig_d_t
-            # 因为feature 和 feature_senti的维度是一样的，所以只用一个org_d代之它们两个的维度
             self.d = MMSAModelConfig.output_d_t
             self.attn_dropout = MMSAModelConfig.attn_dropout_t
         elif modal == 'audio':
             self.orig_d = MMSAModelConfig.orig_d_a
-            # 因为feature 和 feature_senti的维度是一样的，所以只用一个org_d代之它们两个的维度
             self.d = MMSAModelConfig.output_d_a
             self.attn_dropout = MMSAModelConfig.attn_dropout_a
         else:
             self.orig_d = MMSAModelConfig.orig_d_v
-            # 因为feature 和 feature_senti的维度是一样的，所以只用一个org_d代之它们两个的维度
             self.d = MMSAModelConfig.output_d_v
             self.attn_dropout = MMSAModelConfig.attn_dropout_v
         # 1. Temporal convolutional layers
@@ -212,7 +207,6 @@ class FeatSentiFusionModel(nn.Module):
             if self.senti_feat_fusion_strategy == 'fusion':
                 # 2. Crossmodal Attentions :senti-feat-fusion
                 self.trans_with_s = self.get_network(attention_type='cross_attention')
-                # note:transformer的输入和输出是一样维度的，输入2*self.d（feat+feat_senti）输出也是2*self.d
             if self.senti_feat_fusion_strategy == 'concat':
                 # 3. Self Attentions (Could be replaced by LSTMs, GRUs, etc.):senti-feat-concat
                 #    [e.g., self.trans_x_mem = nn.LSTM(self.d_x, self.d_x, 1)

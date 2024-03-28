@@ -1,5 +1,3 @@
-#没法去水印，因为有的水印直接打在场景画面上了
-#这个脚本是为了讲视频的后30s广告去掉
 import ffmpeg
 import os
 import json
@@ -19,7 +17,6 @@ class VideoProcess():
         self.imgsize = 224
         self.npylen = 16
 
-    # 这个函数是为了把movieclip视频后面三十秒的广告剪掉
     def video_cut(self):
         if not os.path.exists(self.processed_videos_dir):
             os.makedirs(self.processed_videos_dir)
