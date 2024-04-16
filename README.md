@@ -1,6 +1,6 @@
 # MMSF: A Multimodal Sentiment-Fused Method to Recognize Video Speaking Style
 
-All the data, processed data, extracted features, pretrained model weights, results, supporting sources and our docker image can be downloaded at [Baidu Disk](https://pan.baidu.com/s/1capDCX6_55jdSW8Yx3eGBg?pwd=4ac6) or [OneDrive](https://1drv.ms/f/s!AqIJSYD5gt-YlC-D4ONCfKefbNKI?e=aC8Xhw). 
+All the data, processed data, extracted features, pretrained model weights, results, supporting sources and our docker image can be downloaded at [Baidu Disk](https://pan.baidu.com/s/1capDCX6_55jdSW8Yx3eGBg?pwd=4ac6) or [OneDrive](https://1drv.ms/f/s!AqIJSYD5gt-YlC-ecPHw0h9u2Dve). 
 
 ## 1.Quick Start
 ⚡ If you use the docker image that we provided and download all the data, features and model weights directly, you can go straight to perform inference.
@@ -22,7 +22,7 @@ export PYTHONPATH=$PWD
 
 
 ## 3.Preparing Dataset
-⚡ All the data and the processed data are compressed to "data.*" in our Baidu Disk/OneDrive. 
+⚡ Considering that the raw videos were downloaded from YouTube but some of them are not publicly accessible now, we will not provide the raw data but provide the downloading script with videos' YouTube ids.
 ### Data Download
 Download [LVU dataset](https://github.com/chaoyuaw/lvu) and unzip the data to data/LVU/raw.
 

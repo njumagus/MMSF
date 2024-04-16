@@ -5,6 +5,7 @@ from torch.utils.data import DataLoader
 from torch.utils.data.dataloader import default_collate
 from prediction.model.model_MMSA import FeatSentiPredictionModel
 from prediction.config import MMSATrainConfig
+from data.config import pass_videos
 #export PYTHONPATH='xx/prediction'
 import torch.optim as optim
 from torchnet import meter
@@ -28,7 +29,7 @@ class MMSF_Runner:
         #     self.early_fusion=early_fusion
 
         self.modal_tool_list = MMSATrainConfig.modal_tool_list
-        self.pass_videos_dict = MMSATrainConfig.pass_videos
+        self.pass_videos_dict = pass_videos
         self.senti_modal_list = MMSATrainConfig.senti_modal_list  # 'video', 'entity', 'audio', 'text'
         self.senti_attention_models = MMSATrainConfig.senti_attention_models
         self.senti_attention_model_prefix = ''
